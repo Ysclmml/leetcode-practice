@@ -1,4 +1,4 @@
-链接: https://leetcode-cn.com/problems/cheapest-flights-within-k-stops/
+链接: https://leetcode-cn.com/problems/word-search/
 
 q79_单词搜索
 
