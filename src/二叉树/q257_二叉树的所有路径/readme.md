@@ -1,4 +1,4 @@
-链接: https://leetcode-cn.com/problems/predict-the-winner/
+链接: https://leetcode-cn.com/problems/binary-tree-paths/
 
 q257_二叉树的所有路径
 
