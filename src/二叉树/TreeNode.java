@@ -52,7 +52,7 @@ public class TreeNode {
                 queue.offer(curNode.left);
             }
             if (i++ < len) {
-                if (list[i] != null) {
+                if (list[i - 1] != null) {
                     curNode.right = new TreeNode(list[i - 1]);
                     queue.offer(curNode.right);
                 }
