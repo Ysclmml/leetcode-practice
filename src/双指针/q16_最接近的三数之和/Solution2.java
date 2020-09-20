@@ -17,6 +17,7 @@ public class Solution2 {
             int tar = target - fix;
             int left = 0, right = nums.length - 1;
             while (left < right) {
+                // 不能等于当前固定的值
                 if (left == i) {
                     left++;
                     continue;
