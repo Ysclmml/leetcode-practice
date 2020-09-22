@@ -14,6 +14,6 @@ public class Solution {
     @Test
     public void testSolution() {
         Solution s = new Solution();
-
+        assertEquals("", "");
     }
 }
