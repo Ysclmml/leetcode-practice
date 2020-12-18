@@ -1,4 +1,4 @@
-package 数字问题.q_LCP17_速算机器人;
+package 字符串.qOffer05替换空格;
 
 import org.junit.Test;
 
@@ -9,21 +9,21 @@ import static org.junit.Assert.assertEquals;
  * create by yscl on 2020/9/22
  */
 public class Solution {
-    public int calculate(String s) {
-        int x = 1, y = 0;
+
+    public String replaceSpace(String s) {
+        StringBuilder sb = new StringBuilder();
         for (char c : s.toCharArray()) {
-            if (c == 'A') {
-                x = 2 * x + y;
+            if (c == ' ') {
+                sb.append("%20");
             } else {
-                y = 2 * y + x;
+                sb.append(c);
             }
         }
-        return x + y;
+        return sb.toString();
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().calculate("ABAB"));
-        System.out.println(new Solution().calculate("AB"));
+
     }
 
     @Test

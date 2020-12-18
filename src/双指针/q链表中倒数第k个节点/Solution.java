@@ -1,5 +1,9 @@
+package 双指针.q链表中倒数第k个节点;
+
 import org.junit.Test;
-import static org.junit.Assert.*;
+import 双指针.ListNode;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Solution的模板
@@ -7,8 +11,20 @@ import static org.junit.Assert.*;
  */
 public class Solution {
 
-    public static void main(String[] args) {
+    public ListNode getKthFromEnd(ListNode head, int k) {
+        ListNode slow = head, quick = head;
+        while (k-- > 0 && quick != null) {
+            quick = quick.next;
+        }
+        while (quick != null) {
+            slow = slow.next;
+            quick = quick.next;
+        }
+        return slow;
+    }
 
+    public static void main(String[] args) {
+        new Solution().getKthFromEnd(ListNode.createListNode(new int[]{1, 2, 3, 4, 5}), 4).print();
     }
 
     @Test

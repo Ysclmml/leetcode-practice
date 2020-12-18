@@ -1,4 +1,4 @@
-package 数字问题.q_LCP17_速算机器人;
+package 数组.q714_买卖股票的最佳时机含手续费;
 
 import org.junit.Test;
 
@@ -9,21 +9,21 @@ import static org.junit.Assert.assertEquals;
  * create by yscl on 2020/9/22
  */
 public class Solution {
-    public int calculate(String s) {
-        int x = 1, y = 0;
-        for (char c : s.toCharArray()) {
-            if (c == 'A') {
-                x = 2 * x + y;
-            } else {
-                y = 2 * y + x;
-            }
+
+    public int maxProfit(int[] prices, int fee) {
+        int[][] dp = new int[2][prices.length];
+        dp[0][0] = -prices[0];
+        dp[1][0] = 0;
+        for (int i = 1; i < prices.length; i++) {
+            dp[0][i] = Math.max(dp[0][i - 1], dp[1][i - 1] - prices[i]);
+            dp[1][i] = Math.max(dp[1][i-1], dp[0][i-1] + prices[i] - fee);
         }
-        return x + y;
+        return dp[1][prices.length - 1];
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().calculate("ABAB"));
-        System.out.println(new Solution().calculate("AB"));
+        System.out.println(new Solution().maxProfit(new int[]{1, 3, 2, 8, 4, 9}, 2));
+        System.out.println(new Solution().maxProfit(new int[]{1,3,7,5,10,3}, 3));
     }
 
     @Test
